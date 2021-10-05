@@ -1,14 +1,12 @@
 package com.neotech.countrybyphone.app.model.error;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
-@Setter
 @Builder
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ErrorModel {
-    private String errorMessage;
+    private final String errorMessage;
 }
