@@ -5,6 +5,6 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public class ErrorModel {
+public final class ErrorModel {
     private final String errorMessage;
 }
