@@ -18,3 +18,5 @@ Or you can run application with a jar file:
 3.To run integration tests execute next commands in terminal from project root package:
 
     mvn clean test-compile failsafe:integration-test
+    or
+    mvn clean verify

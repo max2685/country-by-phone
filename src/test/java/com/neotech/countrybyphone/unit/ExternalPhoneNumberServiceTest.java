@@ -2,11 +2,8 @@ package com.neotech.countrybyphone.unit;
 
 import com.neotech.countrybyphone.app.ExternalPrefixService;
 import com.neotech.countrybyphone.app.PhoneNumberRepository;
-import com.neotech.countrybyphone.app.entity.PrefixEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
 import org.mockito.Mock;
 import org.springframework.web.client.RestTemplate;
 
@@ -19,8 +16,6 @@ public class ExternalPhoneNumberServiceTest {
     @Mock private PhoneNumberRepository phoneNumberRepository;
     private ExternalPrefixService externalPrefixService;
 
-    @Captor private ArgumentCaptor<PrefixEntity> prefixEntityArgumentCaptor;
-
     @BeforeEach
     void setUp() {
         openMocks(this);
@@ -28,7 +23,7 @@ public class ExternalPhoneNumberServiceTest {
     }
 
     @Test
-    void test() {
+    void savePrefixesAndCountriesInDatabase() {
         when(restTemplate.getForObject(WIKI_URL, String.class)).thenReturn(getHtmlString());
 
         externalPrefixService.savePrefixesAndCountryCodes();
