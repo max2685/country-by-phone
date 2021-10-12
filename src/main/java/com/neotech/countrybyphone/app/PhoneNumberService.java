@@ -37,7 +37,7 @@ public class PhoneNumberService {
         return countryCodes
                 .stream()
                 .map(countryCode -> new Locale("en", countryCode))
-                .map(Locale::getDisplayCountry)
+                .map(locale -> locale.getDisplayCountry(Locale.ENGLISH))
                 .collect(Collectors.toList());
     }
 }
